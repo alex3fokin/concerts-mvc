@@ -29,7 +29,7 @@
 		    <td><?= $order['phone'] ?></td>
 		    <td><?= $order['count_of_tickets'] ?></td>
 		    <td><?= $order['description'] ?></td>
-		    <td><?= $order['status'] ?></td>
+		    <td><?= $order['status'] ? '<span class="alert alert-success">Processed</span>' : '<span class="alert alert-secondary">Unprocessed</span>' ?></td>
 		    <td>
 			<a href="/admin/orders/proceed/<?= $order['id'] ?>">Close order</a>
 		    </td>

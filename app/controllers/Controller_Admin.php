@@ -14,7 +14,7 @@ class Controller_Admin extends Controller {
     public function __construct() {
         parent::__construct();
         if(empty($_SESSION['login'])){
-            Route::redirect("/auth/");
+            Route::redirect("/auth");
         }
         $this->model_users = new Model_Users();
         $this->model_concerts = new Model_Concerts();
