@@ -14,13 +14,13 @@ class Controller_Concerts extends Controller {
     }
     function action_index() {
         $this->view->all_concerts = $this->model_concerts->get_all_concerts();
-        $this->view->content_view = 'main/concerts_view.php';
+        $this->view->content_view = 'front/concerts_view.php';
         $this->view->render();
     }
     function action_order() {
 	$id = filter_input(INPUT_POST, 'id');
 	$this->view->concert = $this->model_concerts->get_one_concert($id);
-	$this->view->content_view = 'main/order_view.php';
+	$this->view->content_view = 'front/order_view.php';
         $this->view->render();
 	//TODO вывести форму с заполненными полями о концерте, кол-во билетов редактируемое
     }
@@ -30,7 +30,7 @@ class Controller_Concerts extends Controller {
         $phone = filter_input(INPUT_POST, 'phone');
         $count_of_tickets = filter_input(INPUT_POST, 'count_of_tickets');
         if($this->model_concerts->insert_order($name, $phone, $concert_id, $count_of_tickets)){
-            $this->view->content_view = 'main/orderprocess_view.php';
+            $this->view->content_view = 'front/orderprocess_view.php';
             $this->view->render();
         }else{
             echo 'Произошла ошибка, заказ не принят';

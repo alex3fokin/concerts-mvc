@@ -11,11 +11,11 @@ class Controller_Auth extends Controller {
         $this->view->template_view = 'authorization.php';
     }
     public function action_index() {
-        $this->view->content_view = 'login_view.php';
+        $this->view->content_view = 'auth/login_view.php';
         $this->view->render();
     }
     public function action_register() {
-        $this->view->content_view = 'register_view.php';
+        $this->view->content_view = 'auth/register_view.php';
         $this->view->render();
     }
     public function action_adduser() {
